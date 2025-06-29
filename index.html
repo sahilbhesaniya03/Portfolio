@@ -1,128 +1,259 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sahil Bhesaniya – Unity Game Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-r6bR0jqTe9J8AqfX0y2QaHkTFlU4tM8J6Do9VrGbJGZCMEiyS08Xk+Rl63O2ERr+Vb8TPZ4vwPhLOyGeIgbzNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --primary: #009dffd7;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1a1a1a;
+      --text: #ffffff;
+      --text-muted: #cccccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #0f0f0f;
-      color: #f0f0f0;
+      background-color: var(--bg-dark);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
+
     header {
+      background: url('images/gaming-background.png') center/cover no-repeat;
+      padding: 8rem 2rem 6rem;
       text-align: center;
-      padding: 4rem 1rem;
-      background: #1a1a1a;
+      position: relative;
     }
-    h1 {
-      font-size: 2.5rem;
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
     }
-    h2 {
-      color: #00ffaa;
+
+    header .content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
+
+    header img.profile {
+      width: 256px;
+      height: 256px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      margin-bottom: 1rem;
     }
-    .section {
-      margin-bottom: 3rem;
+
+    header h1 {
+      font-size: 3.5rem;
     }
-    .skills-list, .project {
-      margin: 1rem 0;
+
+    header p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
     }
-    .project {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    a {
-      color: #00ffaa;
-      text-decoration: none;
-    }
-    .resume-button {
-      background: #00ffaa;
-      color: black;
-      padding: 0.6rem 1.2rem;
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background-color: var(--primary);
+      color: #000;
+      padding: 0.8rem 1.6rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: all 0.3s ease;
     }
+
+    .btn:hover {
+      background-color: #00bbff;
+      transform: translateY(-3px);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    section h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    .skills-list p,
+    .project p {
+      color: var(--text-muted);
+    }
+
+    .project {
+      background-color: var(--bg-light);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0 20px rgba(0, 166, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 174, 255, 0.34);
+    }
+
+    .project img {
+      width: 50%;
+      border-radius: 10px;
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.02);
+    }
+
     footer {
+      background-color: #111;
       text-align: center;
-      padding: 2rem 1rem;
-      background: #1a1a1a;
+      padding: 2rem;
+      font-size: 0.9rem;
       color: #aaa;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .contact-icons a {
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      color: #0febff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Sahil Bhesaniya</h1>
-  <p>Unity Game Developer | Mobile, PC, and VR/AR</p>
-  <a class="resume-button" href="Sahil_Bhesaniya_Game_Developer_Resume.pdf" download>Download Resume</a>
-</header>
-
-<div class="container">
-  <section class="section">
-    <h2>About Me</h2>
-    <p>Creative and detail-oriented Unity Game Developer with 2.5+ years of experience in building immersive games across mobile, desktop, and VR/AR platforms. Skilled in C#, Unity engine, UI/UX systems, and real-time optimization.</p>
-  </section>
-
-  <section class="section">
-    <h2>Technical Skills</h2>
-    <div class="skills-list">
-      <strong>Game Engine:</strong> Unity 3D<br/>
-      <strong>Languages:</strong> C#, UnityScript, JSON, ShaderLab<br/>
-      <strong>Tools:</strong> Visual Studio, Rider, Git, JIRA, Plastic SCM<br/>
-      <strong>Frameworks:</strong> Firebase, Socket, Photon PUN, DOTween, PlayFab<br/>
-      <strong>Graphics:</strong> VFX Graph, Shader Graph, Unity Animator<br/>
-      <strong>Platforms:</strong> Android, iOS, WebGL, Windows, AR/VR
+  <header>
+    <div class="content">
+      <img class="profile" src="images/profile.jpg" alt="Sahil Bhesaniya" />
+      <h1>Sahil Bhesaniya</h1>
+      <p>Unity Game Developer | Mobile, PC, AR/VR</p>
+      <a class="btn" href="Sahil_Bhesaniya_Game_Developer_Resume.pdf" download><i class="fas fa-download"></i> Download
+        Resume</a>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2>Projects</h2>
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>I am a passionate Unity Game Developer with over 2.5 years of experience creating immersive mobile, PC, and
+        VR/AR experiences. My expertise lies in gameplay mechanics, performance optimization, and cross-platform
+        development using Unity and C#.</p>
+    </section>
 
-    <div class="project">
-      <h3>Gaming Platform (Android & iOS)</h3>
-      <p>Real-money gaming platform with titles like Ludo, Chess, Snakes & Ladders, Bubble Shooter, and Fruit Chop. Features secure wallet system and competitive leaderboards.</p>
-    </div>
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-list">
+        <p><strong>Game Engine:</strong> Unity 3D</p>
+        <p><strong>Languages:</strong> C#, JSON, ShaderLab</p>
+        <p><strong>Tools:</strong> Visual Studio, Rider, Git, JIRA, Plastic SCM</p>
+        <p><strong>Frameworks:</strong> Firebase, Photon PUN, DOTween, PlayFab</p>
+        <p><strong>Graphics:</strong> Shader Graph, VFX Graph, Unity Animator</p>
+        <p><strong>Platforms:</strong> Android, iOS, WebGL, Windows, AR/VR</p>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>Coco's Adventure (Windows)</h3>
-      <p>3D platformer game designed for casual players. Features puzzles, obstacles, and vibrant art style for Windows devices.</p>
-    </div>
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Coco's Adventure</h3>
+        <p>A vibrant 3D platformer for casual gamers featuring enemies, puzzles, and intuitive controls. Optimized for
+          performance on Windows.</p>
+        <img src="images/project1.png" alt="Coco's Adventure" />
+      </div>
+      <div class="project">
+        <h3>Jungle Combat 2.5D</h3>
+        <p>Side-scrolling action game with dynamic enemy AI and mission-based objectives. Built in Unity for PC.</p>
+        <img src="images/project2.jpg" alt="Jungle Combat" />
+      </div>
+      <div class="project">
+        <h3>Real-World Room Simulation (VR)</h3>
+        <p>An immersive virtual environment replicating a real room with accurate physics, lighting, and interactivity.
+        </p>
+        <img src="images/project3.jpg" alt="VR Room Simulation" />
+      </div>
+      <div class="project">
+        <h3>Gaming Platform (Android & iOS)</h3>
+        <p>A real-money multiplayer gaming hub featuring Ludo, Chess, Snakes & Ladders, and more. Includes wallet
+          integration and leaderboard systems.</p>
+        <img src="images/project4.png" alt="Gaming Platform" />
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>Jungle Combat 2.5D (Windows)</h3>
-      <p>Side-scrolling action game with enemy AI and jungle missions. Built in Unity and optimized for performance.</p>
-    </div>
+    <section>
+      <h2>Contact</h2>
+      <p>Mobile No: <span style="color: #009dffd7;">9106933075</span></p>
+      <p>Email: <a href="mailto:bhesaniyasahil786@gmail.com">bhesaniyasahil786@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sahil-bhesaniya"
+          target="_blank">linkedin.com/in/sahil-bhesaniya</a></p>
+      <div class="contact-icons">
+        <a href="https://www.linkedin.com/in/sahil-bhesaniya" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="mailto:bhesaniyasahil786@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
 
-    <div class="project">
-      <h3>Real-World Room Simulation (VR)</h3>
-      <p>Immersive VR experience replicating a real-world room with accurate lighting and spatial interaction.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:bhesaniyasahil786@gmail.com">bhesaniyasahil786@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sahil-bhesaniya" target="_blank">linkedin.com/in/sahil-bhesaniya</a></p>
-    <p>GitHub: (Add link if available)</p>
-  </section>
-</div>
-
-<footer>
-  &copy; 2025 Sahil Bhesaniya. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 Sahil Bhesaniya. All rights reserved.
+  </footer>
 
 </body>
+
 </html>
