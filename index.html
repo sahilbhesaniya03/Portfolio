@@ -116,6 +116,8 @@
     }
 
     .project {
+      position: relative;
+      /* ✅ Add this line */
       background-color: var(--bg-light);
       padding: 2rem;
       border-radius: 10px;
@@ -124,13 +126,17 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+
     .project:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0, 174, 255, 0.34);
     }
 
     .project img {
-      width: 50%;
+      width: 100%;
+      max-width: 512px;
+      height: 288px;
+      object-fit: cover;
       border-radius: 10px;
       margin-top: 1rem;
       transition: transform 0.3s ease;
@@ -174,6 +180,63 @@
         transform: translateY(0);
       }
     }
+
+    .project .project-btn {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      padding: 0.6rem 1.4rem;
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .project .project-btn:hover {
+      background-color: var(--primary);
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .project-images-row {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .project-images-row img {
+      height: 480px;
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 166, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .project-images-row img:hover {
+      transform: scale(1.03);
+    }
+.project-img-portrait-centered {
+  display: block;
+  margin: 1.5rem auto 0;
+  height: auto;
+  max-height: 1920px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 166, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-img-portrait-centered:hover {
+  transform: scale(1.03);
+}
+
   </style>
 </head>
 
@@ -216,31 +279,61 @@
         <p>A vibrant 3D platformer for casual gamers featuring enemies, puzzles, and intuitive controls. Optimized for
           performance on Windows.</p>
         <img src="images/project1.png" alt="Coco's Adventure" />
-      </div>
-      <div class="project">
-        <h3>Jungle Combat 2.5D</h3>
-        <p>Side-scrolling action game with dynamic enemy AI and mission-based objectives. Built in Unity for PC.</p>
-        <img src="images/project2.jpg" alt="Jungle Combat" />
-      </div>
-      <div class="project">
-        <h3>Real-World Room Simulation (VR)</h3>
-        <p>An immersive virtual environment replicating a real room with accurate physics, lighting, and interactivity.
-        </p>
-        <img src="images/project3.jpg" alt="VR Room Simulation" />
+        <a class="btn project-btn" href="https://apps.microsoft.com/detail/9phkf81w3k24?hl=en-US&gl=US" target="_blank">
+          <i class="fas fa-external-link-alt"></i> View Project
+        </a>
       </div>
       <div class="project">
         <h3>Gaming Platform (Android & iOS)</h3>
         <p>A real-money multiplayer gaming hub featuring Ludo, Chess, Snakes & Ladders, and more. Includes wallet
           integration and leaderboard systems.</p>
-        <img src="images/project4.png" alt="Gaming Platform" />
+        <div class="project-images-row">
+          <img src="images/project4(01).png" alt="Gaming Platform Screen 1" />
+          <img src="images/project4(02).png" alt="Gaming Platform Screen 2" />
+        </div>
+       <img src="images/project4(03).jpeg" alt="Gaming Platform Game Grid" class="project-img-portrait-centered" />
+
       </div>
+
+      <div class="project">
+        <h3>Jungle Combat 2.5D</h3>
+        <p>Side-scrolling action game with dynamic enemy AI and mission-based objectives. Built in Unity for PC.</p>
+        <img src="images/project3(01).png" alt="Jungle Combat">
+        <img src="images/project3(02).png" alt="Jungle Combat">
+
+      </div>
+
+      <div class="project">
+        <h3>Cooking Bistro</h3>
+        <p>A fast-paced cooking simulation game where players serve dishes to customers in a time management challenge.
+          Includes multiple recipes, Indian-style artwork, and increasing game difficulty across levels.</p>
+        <img src="images/project5(01).png" alt="Cooking Bistro Gameplay" />
+        <img src="images/project5(02).png" alt="Cooking Bistro Splash Screen" />
+      </div>
+      <div class="project">
+        <h3>Ludo Game Classic - Ludo Hive</h3>
+        <p>A competitive online Ludo game with real-time multiplayer, in-game chat, and wallet integration. Features
+          smooth UI/UX, in-app purchases, and secure gameplay powered by Unity and Socket.</p>
+        <img src="images/project2.png" alt="Coco's Adventure" />
+        <a class="btn project-btn" href="https://play.google.com/store/apps/details?id=com.ludo.hive.game"
+          target="_blank">
+          <i class="fas fa-external-link-alt"></i> View Project
+        </a>
+      </div>
+      <div class="project">
+        <h3>Real-World Room Simulation (VR)</h3>
+        <p>An immersive virtual environment replicating a real room with accurate physics, lighting, and interactivity.
+        </p>
+        <img src="images/project6(01).png" alt="VR Room Simulation" />
+      </div>
+
     </section>
 
     <section>
       <h2>Contact</h2>
       <p>Mobile No: <span style="color: #009dffd7;">9106933075</span></p>
       <p>Email: <a href="mailto:bhesaniyasahil786@gmail.com">bhesaniyasahil786@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/sahil-bhesaniya"
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sahil-bhesaniya-b29794300/"
           target="_blank">linkedin.com/in/sahil-bhesaniya</a></p>
       <div class="contact-icons">
         <a href="https://www.linkedin.com/in/sahil-bhesaniya" target="_blank"><i class="fab fa-linkedin"></i></a>
